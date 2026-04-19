@@ -14,7 +14,7 @@ const cols = [
     ],
   },
   {
-    heading: "Company",
+    heading: "Advisory Team",
     links: [
       { label: "About", href: "/about" },
       { label: "Industries", href: "/industries" },
@@ -52,14 +52,14 @@ export default function Footer() {
               />
             </Link>
             <p className="text-[0.8125rem] text-[#9a9895] leading-relaxed max-w-xs">
-              Cross-border legal and business advisory for international companies entering Japan and navigating ASEAN.
+              Cross-border business and regulatory advisory for international organizations entering Japan and navigating ASEAN.
             </p>
             <div className="mt-6">
               <a
-                href="mailto:tttkadoya1029@gmail.com"
+                href="mailto:tttkadoya@gmail.com"
                 className="text-[0.8125rem] text-[#4a4744] hover:text-[#1e3557] transition-colors"
               >
-                tttkadoya1029@gmail.com
+                tttkadoya@gmail.com
               </a>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-[0.75rem] text-[#b8b4af]">
           <p>© {new Date().getFullYear()} Japan Entry Legal. All rights reserved.</p>
-          <p className="tracking-wide">Legal &amp; Business Advisory · Japan · ASEAN</p>
+          <p className="tracking-wide">Business &amp; Regulatory Advisory · Japan · ASEAN</p>
         </div>
       </div>
     </footer>

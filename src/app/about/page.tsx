@@ -5,7 +5,7 @@ import { AnimateIn } from "@/components/AnimateIn";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "We are a cross-border advisory and project coordination team specializing in Japan market entry, ASEAN regulatory navigation, and the intersection of technology and business expansion.",
+    "We are a cross-border business and regulatory advisory team specializing in Japan market entry, ASEAN regulatory navigation, and the intersection of technology and commercial expansion.",
 };
 
 const values = [

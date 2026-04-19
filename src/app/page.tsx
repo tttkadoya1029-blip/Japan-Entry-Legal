@@ -68,7 +68,7 @@ const challenges = [
 const steps = [
   { num: "01", title: "Assessment", desc: "We map your business model against Japan and ASEAN requirements and define the critical path." },
   { num: "02", title: "Architecture", desc: "We design the optimal structural framework — entity, employment, data, IP — for your specific situation." },
-  { num: "03", title: "Execution", desc: "We drive formation, contract drafting, regulatory filings, and licensing from start to completion." },
+  { num: "03", title: "Implementation", desc: "We guide you through entity formation, contract structuring, regulatory processes, and licensing — start to completion." },
   { num: "04", title: "Continuity", desc: "We monitor regulatory change, support your team's decisions, and advise as your footprint expands." },
 ];
 

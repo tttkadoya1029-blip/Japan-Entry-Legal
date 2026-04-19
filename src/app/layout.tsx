@@ -8,13 +8,13 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
 
 export const metadata: Metadata = {
   title: {
-    default: "Japan Entry Legal | Cross-Border Legal & Business Advisory",
+    default: "Japan Entry Legal | Cross-Border Business & Regulatory Advisory",
     template: "%s | Japan Entry Legal",
   },
   description:
-    "Strategic legal and business advisory for global tech companies entering Japan and navigating ASEAN — market entry, data protection, AI regulation, employment, and venture capital.",
+    "Strategic business and regulatory advisory for international technology organizations entering Japan and navigating ASEAN — market entry, data protection, AI governance, employment, and venture structuring.",
   keywords: [
-    "Japan market entry legal",
+    "Japan market entry advisory",
     "expand business into Japan",
     "ASEAN data protection law",
     "Indonesia AI regulation",

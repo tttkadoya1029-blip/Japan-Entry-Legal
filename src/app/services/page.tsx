@@ -23,7 +23,7 @@ const services = [
     ],
     solutions: [
       "Entity design tailored to your business model, tax position, and growth trajectory",
-      "Regulatory mapping to identify all required authorizations and filings",
+      "Regulatory mapping to identify all required authorizations and approvals",
       "Corporate governance framework for foreign-owned Japanese entities",
       "Ongoing compliance calendar so nothing is missed post-launch",
     ],
@@ -33,18 +33,18 @@ const services = [
     tag: "Contract & Commercial",
     title: "Contract & Commercial Advisory",
     intro:
-      "Agreements executed in Japan operate under Japanese law and are interpreted by Japanese courts. Contracts drafted for other jurisdictions frequently fail in ways that only become visible during a dispute. Japanese commercial practice also carries relationship norms that affect how contracts are read.",
+      "Agreements used in Japan operate under Japanese law and are interpreted by Japanese courts. Contracts structured for other jurisdictions frequently create exposure that only becomes visible during a dispute. Japanese commercial practice also carries relationship norms that affect how agreements are read and enforced.",
     problems: [
-      "Agreements that appear solid but are unenforceable under Japanese law",
-      "Automatic renewal clauses that bind your organization longer than intended",
+      "Agreements that appear solid but carry unenforceable provisions under Japanese law",
+      "Automatic renewal clauses that commit your organization longer than intended",
       "Distribution and partner agreements that leave IP and exit rights inadequately protected",
-      "Liability and indemnification provisions that will not hold up in dispute",
+      "Liability and indemnification terms that will not hold up under Japanese standards",
     ],
     solutions: [
-      "Japanese-law compliant commercial agreements drafted in bilingual form",
-      "Distribution, licensing, technology, and SaaS agreements for Japanese operations",
-      "NDA and IP protection frameworks appropriate for Japanese commercial relationships",
-      "Contract review with risk identification and recommended amendments",
+      "Commercial agreement structuring and review support in bilingual form for Japanese operations",
+      "Guidance on distribution, licensing, technology, and SaaS agreements in Japan",
+      "NDA and IP protection frameworks aligned with Japanese commercial relationships",
+      "Contract review with risk identification and amendment recommendations",
     ],
   },
   {
@@ -60,11 +60,11 @@ const services = [
       "Working hours and overtime compliance under Japan's Work Style Reform legislation",
     ],
     solutions: [
-      "Employment agreement templates compliant with the Japanese Labor Standards Act",
-      "Work rules (shugyo kisoku) drafting and labor office registration",
-      "Indonesia workforce compliance audits and remediation programs",
-      "Expatriate work authorization coordination across Japan and ASEAN",
-      "Performance management and workforce exit process design",
+      "Employment agreement structuring aligned with the Japanese Labor Standards Act",
+      "Work rules (shugyo kisoku) design and guidance on labor office registration",
+      "Indonesia workforce compliance assessments and remediation programs",
+      "Expatriate work authorization guidance and coordination across Japan and ASEAN",
+      "Performance management framework design and workforce exit process structuring",
     ],
   },
   {
@@ -81,10 +81,10 @@ const services = [
     ],
     solutions: [
       "APPI compliance assessment and gap analysis for Japan operations",
-      "UU PDP compliance program design for Indonesia",
-      "Multi-market ASEAN data protection framework",
-      "Privacy notice and consent mechanism drafting",
-      "Data protection officer support and incident response protocols",
+      "UU PDP compliance program design and structuring for Indonesia",
+      "Multi-market ASEAN data protection framework development",
+      "Privacy notice and consent mechanism design",
+      "Data protection officer support and incident response planning",
     ],
   },
   {
@@ -103,7 +103,7 @@ const services = [
       "AI governance gap analysis against applicable ASEAN and Japan frameworks",
       "AI system documentation and explainability architecture",
       "Sector-specific compliance assessment across regulated industries",
-      "Responsible use policy and internal governance framework drafting",
+      "Responsible use policy and internal governance framework development",
       "Regulatory engagement strategy for jurisdictions with emerging AI requirements",
     ],
   },
@@ -121,10 +121,10 @@ const services = [
     ],
     solutions: [
       "Investment instrument structuring for Indonesia and Japan contexts",
-      "Singapore holding organization setup and flip structuring",
-      "Cap table management and shareholder agreement drafting",
-      "Indonesia PMV authorization and VC fund structuring",
-      "ESOP and equity incentive plan design for ASEAN and Japan",
+      "Singapore holding structure setup and flip structuring guidance",
+      "Cap table structuring and shareholder agreement review support",
+      "Indonesia PMV authorization guidance and VC fund structuring",
+      "ESOP and equity incentive plan design for ASEAN and Japan teams",
     ],
   },
   {
@@ -142,8 +142,8 @@ const services = [
     solutions: [
       "Dispute assessment and strategy guidance across Japan and ASEAN",
       "Negotiated resolution support in commercial and employment disputes",
-      "Joint venture exit and share transfer coordination",
-      "Coordination with local proceedings counsel where formal action is required",
+      "Joint venture exit and share transfer structuring",
+      "Coordination with local counsel where formal proceedings are required",
     ],
   },
 ];
