@@ -55,7 +55,7 @@ export default function ContactPage() {
           {/* Form */}
           <AnimateIn className="md:col-span-7" delay={0}>
             <form
-              action="mailto:tttkadoya1029@gmail.com"
+              action="mailto:tttkadoya@gmail.com"
               method="get"
               encType="text/plain"
               className="space-y-6"
@@ -143,10 +143,10 @@ export default function ContactPage() {
               <div>
                 <p className="label-overline mb-4">Direct Contact</p>
                 <a
-                  href="mailto:tttkadoya1029@gmail.com"
+                  href="mailto:tttkadoya@gmail.com"
                   className="text-[0.9rem] text-[#1a1918] hover:text-[#1e3557] transition-colors font-medium"
                 >
-                  tttkadoya1029@gmail.com
+                  tttkadoya@gmail.com
                 </a>
               </div>
 
@@ -168,7 +168,7 @@ export default function ContactPage() {
                 </ul>
               </div>
 
-              <div className="border border-[#e0ddd8] bg-[#f8f7f5] p-6">
+              <div className="border border-[#e0ddd8] bg-white p-6">
                 <p className="text-[0.875rem] font-semibold text-[#1a1918] mb-2">First time reaching out?</p>
                 <p className="caption leading-relaxed mb-4">
                   We offer an initial consultation to understand your situation and assess fit. No commitment required.
