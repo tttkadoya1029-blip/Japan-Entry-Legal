@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { AnimateIn, StaggerIn, staggerChild } from "@/components/AnimateIn";
-import { JapanMark } from "@/components/JapanMark";
 import { posts } from "@/lib/posts";
 
 const services = [
@@ -94,73 +93,56 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-0 items-center">
 
           {/* Text column */}
-          <div className="md:col-span-7 relative z-10">
-            <motion.p
-              className="label-overline mb-7"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              Cross-Border Advisory &amp; Strategic Guidance
-            </motion.p>
-
-            <div className="overflow-hidden mb-2">
-              <motion.h1
-                className="display"
-                initial={{ opacity: 0, y: 48 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-              >
-                Entering Japan<br />
-                takes more than<br />
-                <em className="not-italic font-semibold text-[#1e3557]">a local office.</em>
-              </motion.h1>
-            </div>
-
-            <motion.p
-              className="body-lg max-w-lg mt-7 mb-10"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.45 }}
-            >
-              We are a cross-border advisory and project coordination team partnering with international technology organizations, ASEAN-based ventures, and global businesses navigating Japan and Southeast Asia.
-            </motion.p>
-
-            <motion.div
-              className="flex flex-col sm:flex-row gap-3"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.62 }}
-            >
+          <motion.div
+            className="md:col-span-7 relative z-10"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <p className="label-overline mb-6">Cross-Border Advisory &amp; Strategic Guidance</p>
+            <h1 className="text-[1.75rem] md:text-[2.25rem] font-medium text-[#1a1918] leading-snug tracking-tight mb-6">
+              Advisory support for<br />
+              international organizations<br />
+              entering Japan and ASEAN.
+            </h1>
+            <p className="body max-w-lg mb-8 leading-relaxed">
+              We work with technology companies, ASEAN-based ventures, and global teams that need substantive advisory expertise across Japan and Southeast Asia — delivered with the pace and directness that expansion requires.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <Link href="/contact" className="btn-primary">
                 Schedule a Consultation
               </Link>
               <Link href="/services" className="btn-secondary">
                 Explore Services
               </Link>
-            </motion.div>
-
-            {/* Coverage pills */}
-            <motion.div
-              className="flex flex-wrap gap-2 mt-9"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
+            </div>
+            <div className="flex flex-wrap gap-2">
               {["Japan", "Indonesia", "Singapore", "Thailand", "Vietnam"].map((c) => (
                 <span key={c} className="tag">{c}</span>
               ))}
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
 
-          {/* Japan mark */}
+          {/* Key figures */}
           <motion.div
-            className="hidden md:block md:col-span-5 md:col-start-8"
+            className="hidden md:block md:col-span-4 md:col-start-9"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
           >
-            <JapanMark className="w-full max-w-[420px] ml-auto opacity-85" />
+            <div className="border border-[#e0ddd8] divide-y divide-[#e0ddd8]">
+              {[
+                { num: "6+", label: "Advisory practice areas" },
+                { num: "10+", label: "Jurisdictions covered" },
+                { num: "3", label: "Working languages" },
+                { num: "100%", label: "Japan & ASEAN focus" },
+              ].map((item) => (
+                <div key={item.label} className="px-7 py-5">
+                  <p className="text-[1.5rem] font-light text-[#1e3557] tracking-tight mb-0.5">{item.num}</p>
+                  <p className="caption">{item.label}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -245,22 +227,27 @@ export default function Home() {
             </Link>
           </AnimateIn>
 
-          <StaggerIn className="grid md:grid-cols-3 gap-px bg-[#e0ddd8]" stagger={0.06} delay={0.1}>
-            {services.map((s) => (
-              <motion.div key={s.title} variants={staggerChild}>
+          <div>
+            <div className="divider" />
+            {services.map((s, i) => (
+              <motion.div
+                key={s.title}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.35, delay: 0.08 + 0.05 * i }}
+              >
                 <Link
                   href={s.href}
-                  className="group block bg-[#f8f7f5] hover:bg-white p-8 md:p-9 h-full card-hover transition-colors duration-200"
+                  className="group grid md:grid-cols-12 items-center gap-4 py-4 border-b border-[#e0ddd8] hover:bg-[#f8f7f5] -mx-6 md:-mx-10 px-6 md:px-10 transition-colors duration-150"
                 >
-                  <p className="label-overline text-[#e0ddd8] group-hover:text-[#b8b4af] mb-5 transition-colors">{s.num}</p>
-                  <h3 className="text-[0.9375rem] font-semibold text-[#1a1918] mb-3 leading-snug group-hover:text-[#1e3557] transition-colors duration-200">
-                    {s.title}
-                  </h3>
-                  <p className="caption leading-relaxed">{s.desc}</p>
+                  <span className="hidden md:block md:col-span-1 label-overline text-[#c8c4bf] group-hover:text-[#9a9895] transition-colors">{s.num}</span>
+                  <span className="col-span-10 md:col-span-4 text-[0.875rem] font-medium text-[#1a1918] group-hover:text-[#1e3557] transition-colors">{s.title}</span>
+                  <span className="hidden md:block md:col-span-6 caption leading-relaxed">{s.desc}</span>
+                  <span className="col-span-2 md:col-span-1 text-right caption text-[#c8c4bf] group-hover:text-[#1e3557] transition-colors">→</span>
                 </Link>
               </motion.div>
             ))}
-          </StaggerIn>
+          </div>
         </div>
       </section>
 
@@ -370,31 +357,22 @@ export default function Home() {
       </section>
 
       {/* ══ CTA BANNER ══════════════════════════════════════════════ */}
-      <section className="relative bg-[#f2f1ee] border-t border-[#e0ddd8] px-6 md:px-10 py-20 md:py-28 overflow-hidden">
-        {/* Decorative background mark */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-80 h-80 opacity-[0.035] pointer-events-none select-none">
-          <JapanMark className="w-full h-full" />
-        </div>
-
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
-          <AnimateIn delay={0}>
-            <p className="label-overline mb-5">Begin Your Expansion</p>
-            <h2 className="headline-lg">
-              Let us help you build a sound path into Japan.
-            </h2>
-          </AnimateIn>
-          <AnimateIn delay={0.15} className="md:flex md:justify-end">
-            <div className="max-w-sm">
-              <p className="body leading-relaxed mb-7">
-                Whether you are in the planning stage or already navigating Japan or ASEAN, our advisory team is ready to provide a direct, structured assessment.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/contact" className="btn-primary">
-                  Schedule a Consultation
-                </Link>
-                <Link href="/about" className="btn-secondary">
-                  About Our Team
-                </Link>
+      <section className="bg-white border-t border-[#e0ddd8] px-6 md:px-10 py-14 md:py-18">
+        <div className="max-w-7xl mx-auto">
+          <AnimateIn>
+            <div className="border border-[#e0ddd8] p-10 md:p-14 grid md:grid-cols-2 gap-10 items-start">
+              <div>
+                <p className="label-overline mb-4">Begin Your Expansion</p>
+                <h2 className="headline-lg">Let us help you navigate Japan and ASEAN with confidence.</h2>
+              </div>
+              <div>
+                <p className="body leading-relaxed mb-6">
+                  Whether you are in the planning stage or already navigating Japan or ASEAN, our advisory team provides a direct, structured assessment of your position.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link href="/contact" className="btn-primary">Schedule a Consultation</Link>
+                  <Link href="/about" className="btn-secondary">About Our Team</Link>
+                </div>
               </div>
             </div>
           </AnimateIn>
