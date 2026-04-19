@@ -91,7 +91,7 @@ export default function IndustriesPage() {
           <AnimateIn className="md:col-span-7">
             <p className="label-overline mb-5">Industries</p>
             <h1 className="headline-lg mb-6">
-              We understand your business,<br />not just the regulation.
+              Sector-specific advisory for<br />technology organizations in Asia.
             </h1>
             <p className="body leading-relaxed max-w-lg">
               Generic advisory does not work for technology organizations entering Asia. We focus on the sectors where regulatory complexity is highest and commercial stakes are greatest.

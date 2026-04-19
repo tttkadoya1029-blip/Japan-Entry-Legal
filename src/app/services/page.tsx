@@ -157,7 +157,7 @@ export default function ServicesPage() {
           <AnimateIn className="md:col-span-7">
             <p className="label-overline mb-5">Advisory Services</p>
             <h1 className="headline-lg mb-6">
-              Strategic guidance that moves<br />at the speed of your expansion.
+              Structured advisory across every<br />dimension of your expansion.
             </h1>
             <p className="body max-w-lg leading-relaxed">
               We focus on the structural, regulatory, and operational questions that determine whether your expansion into Japan and ASEAN succeeds — built around the real challenges international organizations face.
@@ -211,12 +211,12 @@ export default function ServicesPage() {
               </AnimateIn>
 
               <AnimateIn className="md:col-span-6 md:col-start-7" delay={0.1}>
-                <div className="border border-[#e0ddd8] bg-[#f8f7f5] p-8 md:p-10">
+                <div className="border border-[#e0ddd8] bg-white p-8 md:p-10">
                   <p className="label-overline mb-6">How We Help</p>
                   <ul className="space-y-3.5">
                     {s.solutions.map((sol) => (
                       <li key={sol} className="flex gap-3 text-[0.875rem] text-[#1a1918]">
-                        <span className="text-[#1e3557] shrink-0 font-semibold mt-0.5">✓</span>
+                        <span className="text-[#b8b4af] shrink-0 mt-0.5">—</span>
                         {sol}
                       </li>
                     ))}

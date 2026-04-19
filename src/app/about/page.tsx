@@ -66,9 +66,9 @@ export default function AboutPage() {
           <AnimateIn className="md:col-span-8">
             <p className="label-overline mb-5">About Our Team</p>
             <h1 className="display mb-7">
-              A cross-border<br />
-              advisory team.<br />
-              <span className="font-semibold text-[#1e3557]">Built differently.</span>
+              Cross-border business<br />
+              and regulatory advisory<br />
+              for Japan and ASEAN.
             </h1>
             <p className="body-lg max-w-xl leading-relaxed">
               We work with international technology organizations and ASEAN-based ventures that need substantive advisory expertise in Japan and Southeast Asia — delivered with the pace and directness that expansion requires.
@@ -96,7 +96,7 @@ export default function AboutPage() {
               {stats.map((item) => (
                 <div
                   key={item.label}
-                  className="p-8 md:p-10 hover:bg-[#f8f7f5] hover:translate-x-1 transition-all duration-200"
+                  className="p-8 md:p-10 hover:bg-[#f8f7f5] transition-colors duration-150"
                 >
                   <p className="text-[2.25rem] font-light text-[#1e3557] tracking-tight mb-1">{item.num}</p>
                   <p className="caption">{item.label}</p>

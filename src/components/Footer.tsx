@@ -91,6 +91,9 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Japan Entry Legal. All rights reserved.</p>
           <p className="tracking-wide">Business &amp; Regulatory Advisory · Japan · ASEAN</p>
         </div>
+        <p className="mt-4 text-[0.7rem] text-[#c8c4bf] leading-relaxed max-w-2xl">
+          Japan Entry Legal provides general business and regulatory advisory services. We are not a law firm and do not provide regulated legal services or legal representation. Content on this site is for informational purposes only and does not constitute legal advice.
+        </p>
       </div>
     </footer>
   );
