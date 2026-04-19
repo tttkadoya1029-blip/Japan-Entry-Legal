@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ─── Design Tokens ────────────────────────────────────────────── */
+/* ─── Design Tokens ─────────────────────────────────────────────── */
 :root {
   --bg:           #ffffff;
   --bg-warm:      #f8f7f5;
@@ -10,14 +10,14 @@
   --text-primary: #1a1918;
   --text-body:    #4a4744;
   --text-muted:   #9a9895;
+  --text-faint:   #b8b4af;
   --accent-navy:  #1e3557;
   --accent-hover: #162843;
 }
 
-/* ─── Base ──────────────────────────────────────────────────────── */
+/* ─── Base ───────────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
 }
 
 body {
@@ -30,25 +30,56 @@ body {
   line-height: 1.6;
 }
 
-/* ─── Global Section Spacing ───────────────────────────────────── */
-.section-pad {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-@media (min-width: 768px) {
-  .section-pad {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
-  }
+/* ─── Type Scale ────────────────────────────────────────────────── */
+.display {
+  font-size: clamp(2.75rem, 5.5vw, 4.75rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
 }
 
-/* ─── Section Label (overline text) ─────────────────────────────── */
-.label-overline {
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.headline-lg {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.018em;
+  color: var(--text-primary);
+}
+
+.headline {
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.body-lg {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--text-body);
+}
+
+.body {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--text-body);
+}
+
+.caption {
+  font-size: 0.8125rem;
+  line-height: 1.6;
   color: var(--text-muted);
+}
+
+/* ─── Section Label ─────────────────────────────────────────────── */
+.label-overline {
+  font-size: 0.675rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
 }
 
 /* ─── Buttons ────────────────────────────────────────────────────── */
@@ -56,95 +87,121 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   background: var(--text-primary);
-  color: #ffffff;
-  font-size: 0.8125rem;
+  color: #fff;
+  font-size: 0.8rem;
   font-weight: 500;
-  letter-spacing: 0.06em;
-  padding: 0.75rem 2rem;
-  transition: background 0.18s ease;
+  letter-spacing: 0.07em;
+  padding: 0.8rem 2rem;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 .btn-primary:hover {
   background: var(--accent-navy);
+  transform: translateY(-1px);
+}
+.btn-primary:active {
+  transform: translateY(0);
 }
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--text-primary);
-  color: var(--text-primary);
-  font-size: 0.8125rem;
+  gap: 0.5rem;
+  border: 1px solid var(--border);
+  color: var(--text-body);
+  font-size: 0.8rem;
   font-weight: 500;
-  letter-spacing: 0.06em;
-  padding: 0.75rem 2rem;
-  transition: background 0.18s ease, color 0.18s ease;
+  letter-spacing: 0.07em;
+  padding: 0.8rem 2rem;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 .btn-secondary:hover {
-  background: var(--text-primary);
-  color: #ffffff;
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+  background: var(--bg-warm);
 }
 
 .btn-text {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8125rem;
+  gap: 0.35rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  letter-spacing: 0.03em;
-  color: var(--text-primary);
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.1rem;
-  transition: border-color 0.18s ease, color 0.18s ease;
+  letter-spacing: 0.05em;
+  color: var(--text-body);
+  transition: color 0.15s ease, gap 0.2s ease;
 }
 .btn-text:hover {
-  border-color: var(--text-primary);
   color: var(--accent-navy);
+  gap: 0.55rem;
 }
 
-/* ─── Category Tags ─────────────────────────────────────────────── */
+/* ─── Tags ───────────────────────────────────────────────────────── */
 .tag {
   display: inline-block;
-  font-size: 0.675rem;
+  font-size: 0.625rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.17em;
   text-transform: uppercase;
   color: var(--accent-navy);
-  background: transparent;
-  border: 1px solid var(--border);
-  padding: 0.2rem 0.65rem;
+  border: 1px solid var(--border-light);
+  padding: 0.2rem 0.6rem;
 }
 
-/* ─── Divider ────────────────────────────────────────────────────── */
+/* ─── Dividers ───────────────────────────────────────────────────── */
 .divider {
   width: 100%;
   height: 1px;
   background: var(--border);
 }
 
-/* ─── Prose (article body) ─────────────────────────────────────── */
+/* ─── Section padding ────────────────────────────────────────────── */
+.section-pad {
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
+}
+@media (min-width: 768px) {
+  .section-pad {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+  }
+}
+
+/* ─── Card hover ─────────────────────────────────────────────────── */
+.card-hover {
+  transition: box-shadow 0.22s ease, transform 0.22s ease;
+}
+.card-hover:hover {
+  box-shadow: 0 4px 24px rgba(26, 25, 24, 0.07);
+  transform: translateY(-2px);
+}
+
+/* ─── Prose (article body) ──────────────────────────────────────── */
 .prose h2 {
-  font-size: 1.375rem;
+  font-size: 1.3125rem;
   font-weight: 600;
-  letter-spacing: -0.01em;
-  margin-top: 2.5rem;
+  letter-spacing: -0.015em;
+  margin-top: 2.75rem;
   margin-bottom: 0.875rem;
   color: var(--text-primary);
-  border-bottom: 1px solid var(--border-light);
   padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .prose h3 {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 0.625rem;
   color: var(--text-primary);
+  letter-spacing: -0.005em;
 }
 
 .prose p {
   margin-bottom: 1.375rem;
-  line-height: 1.85;
+  line-height: 1.875;
   color: var(--text-body);
   font-size: 0.9375rem;
 }
@@ -157,18 +214,19 @@ body {
 
 .prose ul li {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.875rem;
   margin-bottom: 0.5rem;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--text-body);
   font-size: 0.9375rem;
 }
 
 .prose ul li::before {
   content: "—";
-  color: var(--text-muted);
+  color: var(--text-faint);
   flex-shrink: 0;
-  margin-top: 0.025rem;
+  font-size: 0.875rem;
+  margin-top: 0.05rem;
 }
 
 .prose strong {
@@ -182,4 +240,6 @@ body {
   color: var(--text-muted);
   font-style: italic;
   margin: 2rem 0;
+  font-size: 1rem;
+  line-height: 1.8;
 }

@@ -1,128 +1,129 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AnimateIn } from "@/components/AnimateIn";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Legal and business advisory services for companies entering Japan and navigating ASEAN — market entry, employment, data protection, AI regulation, and venture capital.",
+    "Cross-border advisory services for organizations entering Japan and navigating ASEAN — market entry, employment, data protection, AI compliance, and venture capital.",
 };
 
 const services = [
   {
     id: "market-entry",
     tag: "Japan Market Entry",
-    title: "Japan Market Entry & Company Setup",
+    title: "Japan Market Entry & Structural Setup",
     intro:
-      "Entering Japan is not a corporate filing exercise. The entity structure you choose affects tax exposure, liability, operational flexibility, and how Japanese business counterparts perceive your commitment to the market.",
+      "Entering Japan is not a corporate filing exercise. The structural decisions made at entry — entity type, governance, intercompany architecture — shape your tax exposure, liability profile, operational flexibility, and how Japanese counterparts perceive your commitment to the market.",
     problems: [
-      "Which legal entity is right — KK, GK, or branch office?",
-      "What licenses and approvals are required before operations can begin?",
-      "How should cross-border transactions between the Japanese entity and the parent be structured?",
+      "Which entity type is right — KK, GK, or representative office?",
+      "What authorizations and registrations are required before operations begin?",
+      "How should cross-border transactions between the Japan entity and parent be structured?",
       "What ongoing compliance obligations apply from day one?",
     ],
     solutions: [
-      "Entity design tailored to your business model, tax position, and growth plan",
-      "Regulatory mapping to identify licenses, approvals, and filing requirements",
-      "Corporate governance framework designed for foreign-owned Japanese entities",
-      "Ongoing compliance calendar to ensure nothing is missed post-launch",
+      "Entity design tailored to your business model, tax position, and growth trajectory",
+      "Regulatory mapping to identify all required authorizations and filings",
+      "Corporate governance framework for foreign-owned Japanese entities",
+      "Ongoing compliance calendar so nothing is missed post-launch",
     ],
   },
   {
     id: "contracts",
-    tag: "Contract Law",
-    title: "Contract & Commercial Law Support",
+    tag: "Contract & Commercial",
+    title: "Contract & Commercial Advisory",
     intro:
-      "Japanese contracts are enforced in Japan, under Japanese law, by Japanese courts. Agreements drafted for other jurisdictions do not simply transfer, and Japanese commercial relationships operate under legal norms that differ substantially from common law systems.",
+      "Agreements executed in Japan operate under Japanese law and are interpreted by Japanese courts. Contracts drafted for other jurisdictions frequently fail in ways that only become visible during a dispute. Japanese commercial practice also carries relationship norms that affect how contracts are read.",
     problems: [
-      "Commercial agreements that appear solid but are unenforceable under Japanese law",
-      "Automatic renewal clauses that bind the company longer than intended",
-      "Distribution and partner agreements that inadequately protect IP or exit rights",
-      "Liability caps and indemnification provisions that will not hold up in dispute",
+      "Agreements that appear solid but are unenforceable under Japanese law",
+      "Automatic renewal clauses that bind your organization longer than intended",
+      "Distribution and partner agreements that leave IP and exit rights inadequately protected",
+      "Liability and indemnification provisions that will not hold up in dispute",
     ],
     solutions: [
       "Japanese-law compliant commercial agreements drafted in bilingual form",
-      "Distribution, agency, licensing, and technology agreements for Japanese operations",
-      "NDA and IP protection frameworks appropriate for Japanese commercial practice",
-      "Contract review with identified risk areas and recommended amendments",
+      "Distribution, licensing, technology, and SaaS agreements for Japanese operations",
+      "NDA and IP protection frameworks appropriate for Japanese commercial relationships",
+      "Contract review with risk identification and recommended amendments",
     ],
   },
   {
     id: "employment",
     tag: "Employment & Labor",
-    title: "Employment & Labor Compliance (Japan + ASEAN)",
+    title: "Employment & Workforce Compliance (Japan + ASEAN)",
     intro:
-      "Japan's employment framework is heavily employee-protective — termination without cause is effectively prohibited by court precedent. ASEAN markets add further complexity. Hiring without understanding the rules creates liability that surfaces at the worst moment.",
+      "Japan's workforce framework is heavily protective — termination without cause is effectively prohibited by court precedent. ASEAN markets add further complexity. Organizations that build teams without understanding the framework face liability that surfaces at the worst possible moment.",
     problems: [
-      "Terminating employees in Japan without triggering wrongful dismissal claims",
-      "Fixed-term contracts in Indonesia that convert automatically to permanent employment",
-      "BPJS enrollment and manpower reporting compliance obligations in Indonesia",
-      "Work rules and overtime compliance under Japan's Work Style Reform legislation",
+      "Workforce reductions in Japan without triggering wrongful dismissal exposure",
+      "Fixed-term arrangements in Indonesia that convert automatically to permanent employment",
+      "BPJS enrollment and manpower reporting obligations in Indonesia",
+      "Working hours and overtime compliance under Japan's Work Style Reform legislation",
     ],
     solutions: [
       "Employment agreement templates compliant with the Japanese Labor Standards Act",
-      "Work rules (shugyo kisoku) drafting and labor standards office filing",
-      "Indonesia employment compliance audits and remediation programs",
-      "Expat visa and work permit coordination in Japan and across ASEAN",
-      "Performance management and termination process design",
+      "Work rules (shugyo kisoku) drafting and labor office registration",
+      "Indonesia workforce compliance audits and remediation programs",
+      "Expatriate work authorization coordination across Japan and ASEAN",
+      "Performance management and workforce exit process design",
     ],
   },
   {
     id: "data",
-    tag: "Data Protection",
-    title: "Data Protection & Privacy (Indonesia PDP, ASEAN Frameworks)",
+    tag: "Data & Privacy",
+    title: "Data Protection & Privacy Compliance",
     intro:
-      "Japan's APPI and Indonesia's UU PDP are comprehensive data protection frameworks with extraterritorial reach and significant penalties. Operating technology products or SaaS platforms across Asia requires a market-by-market compliance program.",
+      "Japan's APPI and Indonesia's UU PDP both carry extraterritorial reach and significant penalties. Running technology products or data-driven services across Asia requires a compliance architecture that is built for how your product actually operates — not just what the law says on paper.",
     problems: [
       "APPI cross-border transfer requirements that differ materially from GDPR",
-      "UU PDP obligations applying to any company processing Indonesian personal data",
-      "Breach notification timelines that are shorter than most companies expect",
-      "Data localization requirements constraining cloud architecture decisions",
+      "UU PDP obligations applying to any organization processing Indonesian personal data",
+      "Breach notification timelines shorter than most teams expect",
+      "Data localization requirements constraining cloud and infrastructure decisions",
     ],
     solutions: [
-      "APPI compliance audit and gap analysis for Japan operations",
+      "APPI compliance assessment and gap analysis for Japan operations",
       "UU PDP compliance program design for Indonesia",
       "Multi-market ASEAN data protection framework",
       "Privacy notice and consent mechanism drafting",
-      "Data Protection Officer support and breach response protocols",
+      "Data protection officer support and incident response protocols",
     ],
   },
   {
     id: "ai",
     tag: "AI & Technology",
-    title: "AI & Technology Regulation (ASEAN + Global Trends)",
+    title: "AI & Technology Regulatory Guidance",
     intro:
-      "AI regulation in Asia is advancing rapidly. Indonesia, Singapore, and Thailand have each published governance frameworks. Binding legislation is coming. Companies deploying AI products in ASEAN need to build compliance infrastructure now.",
+      "AI governance frameworks across ASEAN are advancing from voluntary guidelines toward binding requirements. Organizations deploying AI products in Asian markets need to build compliance infrastructure now — retrofitting after regulation arrives is significantly more expensive.",
     problems: [
       "AI systems that process personal data face overlapping data protection and AI governance requirements",
-      "Sector-specific AI rules in financial services, healthcare, and content platforms are already active",
-      "Explainability requirements for automated decision-making are being enforced",
-      "EU AI Act extraterritorial reach affects products deployed in ASEAN with EU-origin technology",
+      "Sector-specific AI requirements in financial services and healthcare are already active",
+      "Explainability obligations for automated decision-making are being enforced",
+      "EU AI Act extraterritorial reach affects products in ASEAN built on EU-origin technology",
     ],
     solutions: [
-      "AI governance gap analysis against applicable ASEAN frameworks",
-      "AI system documentation and explainability framework",
+      "AI governance gap analysis against applicable ASEAN and Japan frameworks",
+      "AI system documentation and explainability architecture",
       "Sector-specific compliance assessment across regulated industries",
-      "AI ethics and responsible use policy drafting",
-      "Regulatory engagement strategy for jurisdictions with emerging AI rules",
+      "Responsible use policy and internal governance framework drafting",
+      "Regulatory engagement strategy for jurisdictions with emerging AI requirements",
     ],
   },
   {
     id: "vc",
     tag: "Startup & VC",
-    title: "Startup & Venture Capital Legal Support",
+    title: "Startup & Venture Capital Structuring",
     intro:
-      "International VC term sheets do not map cleanly onto Indonesian or Japanese corporate law. Getting the legal architecture right before the first institutional round saves significant cost and complexity in subsequent rounds and at exit.",
+      "International VC term sheets do not map cleanly onto Indonesian or Japanese corporate frameworks. Getting the structural architecture right before the first institutional round saves significant cost and complexity in later rounds and at exit.",
     problems: [
       "US-form SAFEs and convertible notes that are not executable under Indonesian corporate law",
-      "Singapore holding structures that have not been set up before the fundraise",
-      "ESOP plans that create tax and regulatory problems for Indonesian employees",
-      "Japan corporate mechanics that delay share issuance and cap table updates",
+      "Singapore holding structures that have not been established before the fundraise",
+      "ESOP arrangements that create tax and regulatory complications for Indonesian team members",
+      "Japan share issuance mechanics that delay cap table updates and closing timelines",
     ],
     solutions: [
-      "Investment instrument structuring for Indonesia and Japan",
-      "Singapore holding company setup and flip structuring",
+      "Investment instrument structuring for Indonesia and Japan contexts",
+      "Singapore holding organization setup and flip structuring",
       "Cap table management and shareholder agreement drafting",
-      "Indonesia PMV licensing and VC fund structuring",
+      "Indonesia PMV authorization and VC fund structuring",
       "ESOP and equity incentive plan design for ASEAN and Japan",
     ],
   },
@@ -131,18 +132,18 @@ const services = [
     tag: "Disputes & Exit",
     title: "Cross-Border Dispute & Exit Support",
     intro:
-      "When commercial relationships break down across borders, the path to resolution is rarely straightforward. Jurisdiction, governing law, enforcement of judgments, and cultural expectations about dispute resolution all create complexity.",
+      "When commercial relationships break down across borders, resolution is rarely straightforward. Jurisdiction, governing law, enforcement of judgments, and divergent expectations about how disputes should be handled all add complexity.",
     problems: [
-      "Disputes between Japanese and foreign parties where jurisdiction and governing law are unclear",
-      "Exit from an Indonesia joint venture or partnership arrangement",
-      "Employment dispute resolution within Japan's industrial relations framework",
+      "Commercial disputes between Japan and international parties with unclear jurisdiction",
+      "Exit from Indonesia joint ventures or partnership arrangements",
+      "Workforce dispute resolution within Japan's industrial relations framework",
       "Cross-border contract enforcement where assets are distributed across jurisdictions",
     ],
     solutions: [
-      "Dispute assessment and strategy advice across Japan and ASEAN",
-      "Negotiated settlement support in commercial and employment disputes",
+      "Dispute assessment and strategy guidance across Japan and ASEAN",
+      "Negotiated resolution support in commercial and employment disputes",
       "Joint venture exit and share transfer coordination",
-      "Coordination with local litigation counsel where proceedings are necessary",
+      "Coordination with local proceedings counsel where formal action is required",
     ],
   },
 ];
@@ -153,23 +154,20 @@ export default function ServicesPage() {
       {/* Hero */}
       <section className="bg-white px-6 md:px-10 pt-20 pb-16 md:pt-28 md:pb-20 border-b border-[#e0ddd8]">
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-8">
-          <div className="md:col-span-7">
-            <p className="label-overline mb-5">Services</p>
-            <h1 className="text-3xl md:text-[2.75rem] font-light leading-snug tracking-tight text-[#1a1918] mb-6">
-              Legal support that moves<br />at the speed of business.
+          <AnimateIn className="md:col-span-7">
+            <p className="label-overline mb-5">Advisory Services</p>
+            <h1 className="headline-lg mb-6">
+              Strategic guidance that moves<br />at the speed of your expansion.
             </h1>
-            <p className="text-[#4a4744] text-[0.9375rem] leading-relaxed max-w-lg">
-              We focus on the legal questions that determine whether your business succeeds in Japan and ASEAN — structured around the real operational challenges international companies face.
+            <p className="body max-w-lg leading-relaxed">
+              We focus on the structural, regulatory, and operational questions that determine whether your expansion into Japan and ASEAN succeeds — built around the real challenges international organizations face.
             </p>
-          </div>
+          </AnimateIn>
         </div>
       </section>
 
       {/* Sticky service navigation */}
-      <nav
-        className="sticky top-[4.25rem] z-40 bg-white border-b border-[#e0ddd8] overflow-x-auto"
-        aria-label="Service sections"
-      >
+      <nav className="sticky top-[4.25rem] z-40 bg-white border-b border-[#e0ddd8] overflow-x-auto">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="flex gap-6 py-3 min-w-max">
             {services.map((s) => (
@@ -185,7 +183,7 @@ export default function ServicesPage() {
         </div>
       </nav>
 
-      {/* Services list */}
+      {/* Service entries */}
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {services.map((s, i) => (
           <section
@@ -194,27 +192,25 @@ export default function ServicesPage() {
             className={`py-16 md:py-20 ${i < services.length - 1 ? "border-b border-[#e0ddd8]" : ""}`}
           >
             <div className="grid md:grid-cols-12 gap-10 md:gap-16">
-              {/* Left */}
-              <div className="md:col-span-5">
+              <AnimateIn className="md:col-span-5" delay={0}>
                 <span className="tag mb-5 block">{s.tag}</span>
-                <h2 className="text-xl md:text-2xl font-semibold text-[#1a1918] mb-5 leading-snug">{s.title}</h2>
-                <p className="text-[#4a4744] text-[0.9rem] leading-relaxed mb-8">{s.intro}</p>
+                <h2 className="headline mb-5 leading-snug">{s.title}</h2>
+                <p className="body leading-relaxed mb-8">{s.intro}</p>
 
                 <div>
                   <p className="label-overline mb-4">Common Challenges</p>
                   <ul className="space-y-3">
                     {s.problems.map((p) => (
                       <li key={p} className="flex gap-3 text-[0.875rem] text-[#4a4744]">
-                        <span className="text-[#1e3557] shrink-0 mt-0.5 font-medium">—</span>
+                        <span className="text-[#1e3557] shrink-0 font-medium mt-0.5">—</span>
                         {p}
                       </li>
                     ))}
                   </ul>
                 </div>
-              </div>
+              </AnimateIn>
 
-              {/* Right */}
-              <div className="md:col-span-6 md:col-start-7">
+              <AnimateIn className="md:col-span-6 md:col-start-7" delay={0.1}>
                 <div className="border border-[#e0ddd8] bg-[#f8f7f5] p-8 md:p-10">
                   <p className="label-overline mb-6">How We Help</p>
                   <ul className="space-y-3.5">
@@ -231,7 +227,7 @@ export default function ServicesPage() {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </AnimateIn>
             </div>
           </section>
         ))}
@@ -240,21 +236,21 @@ export default function ServicesPage() {
       {/* CTA */}
       <section className="bg-[#f2f1ee] border-t border-[#e0ddd8] px-6 md:px-10 py-16 md:py-20">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-light tracking-tight text-[#1a1918] leading-snug">
-              Not sure which services apply to your situation?
+          <AnimateIn>
+            <h2 className="headline-lg leading-snug">
+              Not sure which areas apply to your situation?
             </h2>
-          </div>
-          <div className="md:flex md:justify-end">
+          </AnimateIn>
+          <AnimateIn delay={0.1} className="md:flex md:justify-end">
             <div>
-              <p className="text-[#4a4744] text-[0.9rem] mb-6 leading-relaxed">
-                Tell us about your business and we will identify the legal and regulatory requirements specific to your entry plan.
+              <p className="body mb-6 leading-relaxed">
+                Tell us about your expansion plan and we will identify the structural and regulatory requirements specific to your situation.
               </p>
               <Link href="/contact" className="btn-primary">
                 Schedule a Consultation
               </Link>
             </div>
-          </div>
+          </AnimateIn>
         </div>
       </section>
     </>
