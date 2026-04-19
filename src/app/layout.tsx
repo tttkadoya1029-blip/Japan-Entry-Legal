@@ -1,33 +1,40 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
 
 export const metadata: Metadata = {
-  title: "Japan Entry Legal | 日本進出法務サポート",
-  description: "外資系企業の日本市場参入を法務面からサポートします。",
+  title: {
+    default: "Japan Entry Legal | Cross-Border Legal & Business Advisory",
+    template: "%s | Japan Entry Legal",
+  },
+  description:
+    "Strategic legal and business advisory for global tech companies entering Japan and navigating ASEAN — market entry, data protection, AI regulation, employment, and venture capital.",
+  keywords: [
+    "Japan market entry legal",
+    "expand business into Japan",
+    "ASEAN data protection law",
+    "Indonesia AI regulation",
+    "venture capital Indonesia",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Japan Entry Legal",
+  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={geist.variable}>
+      <body className="flex flex-col min-h-screen">
+        <Header />
+        <div className="flex-1 pt-16">{children}</div>
+        <Footer />
+      </body>
     </html>
   );
 }
