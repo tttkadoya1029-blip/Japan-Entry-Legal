@@ -10,19 +10,19 @@ export const metadata: Metadata = {
 const values = [
   {
     title: "Business-first thinking",
-    desc: "We measure success by your business outcomes, not by the weight of our legal opinions. Every recommendation we make connects directly to your commercial objectives.",
+    desc: "We measure success by your business outcomes, not by the weight of our legal opinions. Every recommendation connects directly to your commercial objectives.",
   },
   {
     title: "Real market experience",
-    desc: "Our expertise is grounded in real project work across Japan and ASEAN — not theoretical frameworks. We have been through the problems you are facing.",
+    desc: "Our expertise is grounded in substantive project work across Japan and ASEAN — not theoretical frameworks. We have worked through the problems you are facing.",
   },
   {
     title: "Direct communication",
-    desc: "We tell you what you need to hear, not what you want to hear. Clear assessments of risk, realistic timelines, and straightforward advice.",
+    desc: "We tell you what you need to hear. Clear assessments of risk, realistic timelines, and straightforward advice — without caveats that obscure the answer.",
   },
   {
     title: "International fluency",
-    desc: "We work seamlessly with global headquarters, regional teams, and local operators. We understand the dynamics of international businesses in Asian markets.",
+    desc: "We work with global headquarters, regional teams, and local operators. We understand the dynamics of international businesses operating in Asian markets.",
   },
 ];
 
@@ -30,7 +30,7 @@ const expertise = [
   { area: "Japan Market Entry", detail: "Corporate setup, regulatory licensing, operational compliance" },
   { area: "ASEAN Regulatory Navigation", detail: "Indonesia, Singapore, Thailand, Vietnam" },
   { area: "AI & Technology Law", detail: "Governance frameworks, sector-specific rules, emerging regulation" },
-  { area: "Data Protection", detail: "APPI, UU PDP, PDPA, multi-market programs" },
+  { area: "Data Protection", detail: "APPI, UU PDP, PDPA, multi-market compliance programs" },
   { area: "Employment & Labor", detail: "Japan and Indonesia employment compliance, expat mobility" },
   { area: "Startup & VC", detail: "Investment structuring, cap table, ESOP, PMV licensing" },
 ];
@@ -39,60 +39,71 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-black text-white px-6 py-28 md:py-40">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-[#00FFB3] text-xs font-semibold uppercase tracking-widest mb-6">About</p>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight max-w-4xl mb-8">
-            We are a cross-border advisory team.<br />
-            <span className="text-gray-400">Not a traditional law firm.</span>
-          </h1>
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed">
-            We work with global technology companies and startups that need real legal and business expertise in Japan and ASEAN — delivered with the pace and directness that international business requires.
-          </p>
+      <section className="bg-white px-6 md:px-10 pt-20 pb-16 md:pt-28 md:pb-20 border-b border-[#e0ddd8]">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-8">
+          <div className="md:col-span-8">
+            <p className="label-overline mb-5">About</p>
+            <h1 className="text-3xl md:text-[2.75rem] font-light leading-snug tracking-tight text-[#1a1918] mb-6">
+              A cross-border advisory team.<br />
+              <span className="font-semibold">Not a traditional law firm.</span>
+            </h1>
+            <p className="text-[#4a4744] text-[0.9375rem] leading-relaxed max-w-xl">
+              We work with global technology companies and startups that need substantive legal and business expertise in Japan and ASEAN — delivered with the pace and directness that international business requires.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Mission */}
-      <section className="px-6 py-24 md:py-32">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <section className="bg-white px-6 md:px-10 section-pad border-b border-[#e0ddd8]">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="text-[#00FFB3] text-xs font-semibold uppercase tracking-widest mb-4">Our Mission</p>
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
+            <p className="label-overline mb-5">Our Mission</p>
+            <h2 className="text-2xl md:text-[2rem] font-light tracking-tight text-[#1a1918] leading-snug mb-6">
               Making the complex navigable.
             </h2>
-            <p className="text-gray-600 leading-relaxed mb-6 text-lg">
-              Japan and ASEAN are among the most commercially significant and legally complex markets in the world. Most international companies either underinvest in legal compliance — creating risk — or overspend on generic legal services that don&apos;t understand their business.
+            <p className="text-[#4a4744] text-[0.9375rem] leading-relaxed mb-5">
+              Japan and ASEAN are among the most commercially significant and legally complex markets in the world. Most international companies either underinvest in legal compliance — creating serious risk — or overspend on generic legal services that do not understand their business model.
             </p>
-            <p className="text-gray-600 leading-relaxed text-lg">
-              We exist to close that gap. We bring together legal expertise, market knowledge, and genuine understanding of how tech businesses and startups operate. The result is advice that is both rigorous and practical.
+            <p className="text-[#4a4744] text-[0.9375rem] leading-relaxed">
+              We exist to close that gap. We combine legal expertise, genuine market knowledge, and a deep understanding of how technology businesses and startups operate. The result is advice that is both legally rigorous and commercially practical.
             </p>
           </div>
-          <div className="bg-black text-white rounded-2xl p-10">
-            <p className="text-5xl font-bold text-[#00FFB3] mb-2">6+</p>
-            <p className="text-gray-400 text-sm mb-8">Practice areas across Japan and ASEAN</p>
-            <p className="text-5xl font-bold text-[#00FFB3] mb-2">10+</p>
-            <p className="text-gray-400 text-sm mb-8">Jurisdictions covered</p>
-            <p className="text-5xl font-bold text-[#00FFB3] mb-2">100%</p>
-            <p className="text-gray-400 text-sm">Focus on Japan and ASEAN cross-border work</p>
+
+          <div className="border border-[#e0ddd8]">
+            {[
+              { num: "6+", label: "Practice areas across Japan and ASEAN" },
+              { num: "10+", label: "Jurisdictions covered" },
+              { num: "100%", label: "Focus on Japan and ASEAN cross-border work" },
+            ].map((item, i) => (
+              <div
+                key={item.label}
+                className={`p-8 md:p-10 ${i < 2 ? "border-b border-[#e0ddd8]" : ""}`}
+              >
+                <p className="text-[2rem] font-light text-[#1e3557] tracking-tight mb-1">{item.num}</p>
+                <p className="text-[0.875rem] text-[#9a9895]">{item.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Why Different */}
-      <section className="bg-gray-50 px-6 py-24 md:py-32">
+      {/* Why different */}
+      <section className="bg-[#f8f7f5] px-6 md:px-10 section-pad border-b border-[#e0ddd8]">
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-2xl mb-16">
-            <p className="text-[#00FFB3] text-xs font-semibold uppercase tracking-widest mb-4">Why We&apos;re Different</p>
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-              We are not a generalist firm that covers Japan and ASEAN.<br />
-              <span className="text-gray-400">We are specialists who cover nothing else.</span>
+          <div className="max-w-2xl mb-12">
+            <p className="label-overline mb-5">Why We Are Different</p>
+            <h2 className="text-2xl md:text-[2rem] font-light tracking-tight text-[#1a1918] leading-snug">
+              We are not a generalist firm that covers Japan and ASEAN among many other things.<br />
+              We cover nothing else.
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-px bg-[#e0ddd8]">
             {values.map((v) => (
-              <div key={v.title} className="bg-white rounded-2xl p-8">
-                <h3 className="text-base font-semibold text-black mb-3">{v.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
+              <div key={v.title} className="bg-[#f8f7f5] p-8 md:p-10">
+                <div className="w-5 h-px bg-[#1e3557] mb-6" />
+                <h3 className="text-[0.9375rem] font-semibold text-[#1a1918] mb-3">{v.title}</h3>
+                <p className="text-[#4a4744] text-[0.875rem] leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -100,20 +111,25 @@ export default function AboutPage() {
       </section>
 
       {/* Expertise */}
-      <section className="px-6 py-24 md:py-32">
+      <section className="bg-white px-6 md:px-10 section-pad border-b border-[#e0ddd8]">
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-2xl mb-16">
-            <p className="text-[#00FFB3] text-xs font-semibold uppercase tracking-widest mb-4">Areas of Expertise</p>
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-              Deep expertise across the legal dimensions that matter for tech companies in Asia.
+          <div className="max-w-xl mb-12">
+            <p className="label-overline mb-5">Areas of Expertise</p>
+            <h2 className="text-2xl md:text-[2rem] font-light tracking-tight text-[#1a1918] leading-snug">
+              Deep expertise across the legal dimensions that matter for technology companies in Asia.
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {expertise.map((e) => (
-              <div key={e.area} className="border border-gray-100 rounded-2xl p-8">
-                <div className="w-8 h-0.5 bg-[#00FFB3] mb-6" />
-                <h3 className="text-base font-semibold text-black mb-2">{e.area}</h3>
-                <p className="text-gray-500 text-sm">{e.detail}</p>
+          <div className="divider mb-0" />
+          <div className="grid md:grid-cols-3">
+            {expertise.map((e, i) => (
+              <div
+                key={e.area}
+                className={`py-8 px-0 md:px-8 border-b border-[#e0ddd8] ${
+                  i % 3 !== 2 ? "md:border-r" : ""
+                } ${i % 3 === 0 ? "md:pl-0" : ""} ${i % 3 === 2 ? "md:pr-0" : ""}`}
+              >
+                <p className="text-[0.875rem] font-semibold text-[#1a1918] mb-2">{e.area}</p>
+                <p className="text-[0.8125rem] text-[#9a9895]">{e.detail}</p>
               </div>
             ))}
           </div>
@@ -121,11 +137,11 @@ export default function AboutPage() {
       </section>
 
       {/* Approach */}
-      <section className="bg-black text-white px-6 py-24 md:py-32">
+      <section className="bg-[#f8f7f5] px-6 md:px-10 section-pad border-b border-[#e0ddd8]">
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-16">
-            <p className="text-[#00FFB3] text-xs font-semibold uppercase tracking-widest mb-4">Our Approach</p>
-            <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+          <div className="max-w-xl mb-12">
+            <p className="label-overline mb-5">Our Approach</p>
+            <h2 className="text-2xl md:text-[2rem] font-light tracking-tight text-[#1a1918] leading-snug">
               We work as your partner, not your vendor.
             </h2>
           </div>
@@ -133,20 +149,20 @@ export default function AboutPage() {
             {[
               {
                 title: "Integrated advisory",
-                desc: "Legal, regulatory, and business considerations addressed together — not in separate silos.",
+                desc: "Legal, regulatory, and business considerations are addressed together — not in separate silos that leave coordination gaps.",
               },
               {
                 title: "Proactive monitoring",
-                desc: "We track regulatory changes in Japan and ASEAN and alert you when they affect your business, before you discover problems.",
+                desc: "We track regulatory change in Japan and ASEAN and notify you when developments affect your business before they create problems.",
               },
               {
                 title: "Cross-border coordination",
-                desc: "We coordinate across jurisdictions so you have a single point of contact for your Japan and ASEAN legal work.",
+                desc: "We coordinate across jurisdictions, giving you a single point of contact for your Japan and ASEAN legal work.",
               },
             ].map((item) => (
-              <div key={item.title} className="border border-gray-800 rounded-2xl p-8">
-                <h3 className="text-base font-semibold text-white mb-3">{item.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="bg-white border border-[#e0ddd8] p-8">
+                <h3 className="text-[0.9rem] font-semibold text-[#1a1918] mb-3">{item.title}</h3>
+                <p className="text-[#4a4744] text-[0.875rem] leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -154,18 +170,21 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 py-24">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to work together?</h2>
-          <p className="text-gray-600 text-lg mb-10">
-            Tell us about your situation and let&apos;s assess how we can help.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center bg-black text-white font-semibold px-10 py-4 rounded-full hover:bg-gray-800 transition-colors"
-          >
-            Schedule a Consultation
-          </Link>
+      <section className="bg-white px-6 md:px-10 py-16 md:py-20">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+          <h2 className="text-2xl md:text-3xl font-light tracking-tight text-[#1a1918] leading-snug">
+            Ready to work together?
+          </h2>
+          <div className="md:flex md:justify-end">
+            <div>
+              <p className="text-[#4a4744] text-[0.9rem] mb-6 leading-relaxed">
+                Tell us about your situation and we will assess how we can help.
+              </p>
+              <Link href="/contact" className="btn-primary">
+                Schedule a Consultation
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </>

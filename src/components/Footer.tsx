@@ -1,65 +1,95 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const links = {
-  Services: [
-    { label: "Japan Market Entry", href: "/services#market-entry" },
-    { label: "Contract & Commercial", href: "/services#contracts" },
-    { label: "Employment & Labor", href: "/services#employment" },
-    { label: "Data Protection", href: "/services#data" },
-    { label: "AI & Tech Regulation", href: "/services#ai" },
-    { label: "Startup & VC", href: "/services#vc" },
-  ],
-  Company: [
-    { label: "About", href: "/about" },
-    { label: "Industries", href: "/industries" },
-    { label: "Insights", href: "/insights" },
-    { label: "Contact", href: "/contact" },
-  ],
-};
+const cols = [
+  {
+    heading: "Services",
+    links: [
+      { label: "Japan Market Entry", href: "/services#market-entry" },
+      { label: "Contract & Commercial", href: "/services#contracts" },
+      { label: "Employment & Labor", href: "/services#employment" },
+      { label: "Data Protection", href: "/services#data" },
+      { label: "AI & Technology", href: "/services#ai" },
+      { label: "Startup & Venture Capital", href: "/services#vc" },
+    ],
+  },
+  {
+    heading: "Company",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Industries", href: "/industries" },
+      { label: "Insights", href: "/insights" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
+  {
+    heading: "Practice Regions",
+    links: [
+      { label: "Japan", href: "/services" },
+      { label: "Indonesia", href: "/insights/indonesia-ai-regulation-explained" },
+      { label: "Singapore", href: "/industries" },
+      { label: "Southeast Asia (ASEAN)", href: "/industries" },
+    ],
+  },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
-          <div className="md:col-span-1">
-            <Image src="/hp-logo.png" alt="Japan Entry Legal" width={140} height={36} className="object-contain h-8 w-auto invert mb-4" />
-            <p className="text-gray-400 text-sm leading-relaxed mt-4">
-              Cross-border legal and business advisory for global tech companies entering Japan and navigating ASEAN.
+    <footer className="border-t border-[#e0ddd8] bg-[#f8f7f5]">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 pt-14 pb-8">
+
+        {/* Top row */}
+        <div className="grid md:grid-cols-5 gap-10 mb-12">
+          {/* Brand */}
+          <div className="md:col-span-2 pr-8">
+            <Link href="/">
+              <Image
+                src="/hp-logo.png"
+                alt="Japan Entry Legal"
+                width={140}
+                height={34}
+                className="object-contain h-7 w-auto mb-5"
+              />
+            </Link>
+            <p className="text-[0.8125rem] text-[#9a9895] leading-relaxed max-w-xs">
+              Cross-border legal and business advisory for international companies entering Japan and navigating ASEAN.
             </p>
+            <div className="mt-6">
+              <a
+                href="mailto:tttkadoya1029@gmail.com"
+                className="text-[0.8125rem] text-[#4a4744] hover:text-[#1e3557] transition-colors"
+              >
+                tttkadoya1029@gmail.com
+              </a>
+            </div>
           </div>
-          {Object.entries(links).map(([section, items]) => (
-            <div key={section}>
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">{section}</h4>
+
+          {/* Nav columns */}
+          {cols.map((col) => (
+            <div key={col.heading}>
+              <p className="label-overline mb-4">{col.heading}</p>
               <ul className="space-y-2.5">
-                {items.map((item) => (
-                  <li key={item.href}>
-                    <Link href={item.href} className="text-gray-400 text-sm hover:text-white transition-colors">
-                      {item.label}
+                {col.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-[0.8125rem] text-[#9a9895] hover:text-[#1a1918] transition-colors leading-snug"
+                    >
+                      {link.label}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">Contact</h4>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Ready to enter Japan or navigate ASEAN?
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block mt-4 bg-[#00FFB3] text-black text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-white transition-colors"
-            >
-              Get in Touch
-            </Link>
-          </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-600">
+        {/* Bottom rule */}
+        <div className="divider mb-6" />
+
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-[0.75rem] text-[#b8b4af]">
           <p>© {new Date().getFullYear()} Japan Entry Legal. All rights reserved.</p>
-          <p>Legal & Business Advisory · Japan · ASEAN</p>
+          <p className="tracking-wide">Legal &amp; Business Advisory · Japan · ASEAN</p>
         </div>
       </div>
     </footer>

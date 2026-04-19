@@ -20,92 +20,94 @@ const topics = [
   "Other",
 ];
 
+const coverage = [
+  "Japan (nationwide)",
+  "Indonesia",
+  "Singapore",
+  "Thailand",
+  "Vietnam",
+  "Philippines",
+];
+
 export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-black text-white px-6 py-28 md:py-36">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-[#00FFB3] text-xs font-semibold uppercase tracking-widest mb-6">Contact</p>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight max-w-3xl mb-6">
-            Let&apos;s start with<br />a direct conversation.
-          </h1>
-          <p className="text-gray-400 text-lg max-w-xl leading-relaxed">
-            Tell us about your situation. We&apos;ll give you a direct assessment of what you&apos;re facing and how we can help.
-          </p>
+      <section className="bg-white px-6 md:px-10 pt-20 pb-14 md:pt-28 md:pb-18 border-b border-[#e0ddd8]">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-8">
+          <div className="md:col-span-7">
+            <p className="label-overline mb-5">Contact</p>
+            <h1 className="text-3xl md:text-[2.75rem] font-light leading-snug tracking-tight text-[#1a1918] mb-6">
+              Let&apos;s start with<br />a direct conversation.
+            </h1>
+            <p className="text-[#4a4744] text-[0.9375rem] leading-relaxed max-w-md">
+              Tell us about your situation. We will give you a clear assessment of what you are facing and how we can help.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Contact Content */}
-      <section className="px-6 py-20 md:py-28">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-5 gap-16">
+      {/* Main contact area */}
+      <section className="px-6 md:px-10 py-14 md:py-20">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 md:gap-16">
+
           {/* Form */}
-          <div className="md:col-span-3">
+          <div className="md:col-span-7">
             <form
               action={`mailto:tttkadoya1029@gmail.com`}
               method="get"
               encType="text/plain"
               className="space-y-6"
             >
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-widest text-gray-500 mb-2">
-                    First Name *
-                  </label>
+                  <label className="label-overline block mb-2.5">First Name *</label>
                   <input
                     name="first_name"
                     required
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors"
+                    className="w-full border border-[#e0ddd8] bg-white px-4 py-3 text-[0.9rem] text-[#1a1918] placeholder:text-[#b8b4af] focus:outline-none focus:border-[#1a1918] transition-colors"
                     placeholder="Alex"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-widest text-gray-500 mb-2">
-                    Last Name *
-                  </label>
+                  <label className="label-overline block mb-2.5">Last Name *</label>
                   <input
                     name="last_name"
                     required
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors"
+                    className="w-full border border-[#e0ddd8] bg-white px-4 py-3 text-[0.9rem] text-[#1a1918] placeholder:text-[#b8b4af] focus:outline-none focus:border-[#1a1918] transition-colors"
                     placeholder="Johnson"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-gray-500 mb-2">
-                  Company *
-                </label>
+                <label className="label-overline block mb-2.5">Company *</label>
                 <input
                   name="company"
                   required
-                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors"
+                  className="w-full border border-[#e0ddd8] bg-white px-4 py-3 text-[0.9rem] text-[#1a1918] placeholder:text-[#b8b4af] focus:outline-none focus:border-[#1a1918] transition-colors"
                   placeholder="Your Company Ltd."
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-gray-500 mb-2">
-                  Email Address *
-                </label>
+                <label className="label-overline block mb-2.5">Email Address *</label>
                 <input
                   name="email"
                   type="email"
                   required
-                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors"
+                  className="w-full border border-[#e0ddd8] bg-white px-4 py-3 text-[0.9rem] text-[#1a1918] placeholder:text-[#b8b4af] focus:outline-none focus:border-[#1a1918] transition-colors"
                   placeholder="alex@company.com"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-gray-500 mb-2">
-                  Topic
-                </label>
+                <label className="label-overline block mb-2.5">Topic</label>
                 <select
                   name="topic"
-                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors bg-white text-gray-700"
+                  className="w-full border border-[#e0ddd8] bg-white px-4 py-3 text-[0.9rem] text-[#4a4744] focus:outline-none focus:border-[#1a1918] transition-colors"
                 >
-                  <option value="">Select a topic...</option>
+                  <option value="">Select a topic…</option>
                   {topics.map((t) => (
                     <option key={t} value={t}>{t}</option>
                   ))}
@@ -113,72 +115,72 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-widest text-gray-500 mb-2">
-                  Tell us about your situation *
-                </label>
+                <label className="label-overline block mb-2.5">Your Situation *</label>
                 <textarea
                   name="message"
                   required
                   rows={6}
-                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors resize-none"
-                  placeholder="Brief description of your company, what you're trying to do, and the key questions you have..."
+                  className="w-full border border-[#e0ddd8] bg-white px-4 py-3 text-[0.9rem] text-[#1a1918] placeholder:text-[#b8b4af] focus:outline-none focus:border-[#1a1918] transition-colors resize-none"
+                  placeholder="Brief description of your company, what you are planning, and the key questions you have…"
                 />
               </div>
 
-              <button
-                type="submit"
-                className="w-full bg-black text-white font-semibold py-4 rounded-full hover:bg-gray-800 transition-colors text-sm"
-              >
-                Send Message
-              </button>
+              <div className="divider" />
 
-              <p className="text-xs text-gray-400 text-center">
-                We respond to all inquiries within one business day.
-              </p>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+                <button
+                  type="submit"
+                  className="btn-primary"
+                >
+                  Send Message
+                </button>
+                <p className="text-[0.8rem] text-[#b8b4af]">We respond to all inquiries within one business day.</p>
+              </div>
             </form>
           </div>
 
-          {/* Info */}
-          <div className="md:col-span-2 space-y-10">
-            <div>
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Email</h3>
-              <a
-                href="mailto:tttkadoya1029@gmail.com"
-                className="text-black font-medium hover:text-gray-600 transition-colors"
-              >
-                tttkadoya1029@gmail.com
-              </a>
-            </div>
+          {/* Info panel */}
+          <div className="md:col-span-4 md:col-start-9">
+            <div className="space-y-10">
 
-            <div>
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Coverage</h3>
-              <div className="space-y-2 text-sm text-gray-600">
-                <p>Japan (nationwide)</p>
-                <p>Indonesia</p>
-                <p>Singapore</p>
-                <p>Thailand</p>
-                <p>Vietnam</p>
-                <p>Philippines</p>
+              <div>
+                <p className="label-overline mb-4">Email</p>
+                <a
+                  href="mailto:tttkadoya1029@gmail.com"
+                  className="text-[0.9rem] text-[#1a1918] hover:text-[#1e3557] transition-colors font-medium"
+                >
+                  tttkadoya1029@gmail.com
+                </a>
               </div>
-            </div>
 
-            <div>
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Languages</h3>
-              <div className="space-y-2 text-sm text-gray-600">
-                <p>English</p>
-                <p>Japanese</p>
-                <p>Bahasa Indonesia</p>
+              <div>
+                <p className="label-overline mb-4">Geographic Coverage</p>
+                <ul className="space-y-2">
+                  {coverage.map((c) => (
+                    <li key={c} className="text-[0.875rem] text-[#4a4744]">{c}</li>
+                  ))}
+                </ul>
               </div>
-            </div>
 
-            <div className="bg-gray-50 rounded-2xl p-6">
-              <h3 className="text-sm font-semibold text-black mb-3">First time reaching out?</h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                We offer an initial consultation to understand your situation and assess whether we&apos;re the right fit. No commitment required.
-              </p>
-              <Link href="/about" className="text-xs font-semibold text-black hover:text-gray-600 transition-colors">
-                Learn more about our team →
-              </Link>
+              <div>
+                <p className="label-overline mb-4">Working Languages</p>
+                <ul className="space-y-2">
+                  {["English", "Japanese", "Bahasa Indonesia"].map((lang) => (
+                    <li key={lang} className="text-[0.875rem] text-[#4a4744]">{lang}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="border border-[#e0ddd8] bg-[#f8f7f5] p-6">
+                <p className="text-[0.875rem] font-medium text-[#1a1918] mb-2">First time reaching out?</p>
+                <p className="text-[0.8125rem] text-[#4a4744] leading-relaxed mb-4">
+                  We offer an initial consultation to understand your situation and assess fit. No commitment required.
+                </p>
+                <Link href="/about" className="btn-text text-[0.8rem]">
+                  Learn about our team →
+                </Link>
+              </div>
+
             </div>
           </div>
         </div>

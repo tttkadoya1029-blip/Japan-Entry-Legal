@@ -35,88 +35,88 @@ export default async function PostPage({ params }: Props) {
     .filter((p) => p.slug !== slug && p.category === post.category)
     .slice(0, 2);
 
-  const otherRelated = related.length < 2
-    ? posts.filter((p) => p.slug !== slug && p.slug !== related[0]?.slug).slice(0, 2 - related.length)
-    : [];
-
-  const relatedPosts = [...related, ...otherRelated].slice(0, 2);
+  const filled = related.length < 2
+    ? [...related, ...posts.filter((p) => p.slug !== slug && !related.find((r) => r.slug === p.slug)).slice(0, 2 - related.length)]
+    : related;
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-black text-white px-6 py-24 md:py-32">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-4 mb-8">
-            <Link href="/insights" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">
+      {/* Article header */}
+      <section className="bg-white px-6 md:px-10 pt-16 pb-10 md:pt-24 md:pb-14 border-b border-[#e0ddd8]">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-3 mb-7">
+            <Link href="/insights" className="text-[0.8125rem] text-[#9a9895] hover:text-[#1a1918] transition-colors">
               ← Insights
             </Link>
-            <span className="text-gray-700">·</span>
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#00FFB3] bg-gray-900 px-3 py-1 rounded-full">
-              {post.category}
-            </span>
+            <span className="text-[#e0ddd8]">/</span>
+            <span className="tag">{post.category}</span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6">{post.title}</h1>
-          <p className="text-gray-400 text-lg leading-relaxed max-w-2xl mb-8">{post.description}</p>
-          <div className="flex items-center gap-4 text-sm text-gray-500">
-            <time>{new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
-            <span>·</span>
-            <span>{post.readTime}</span>
+          <div className="max-w-3xl">
+            <h1 className="text-2xl md:text-[2.25rem] font-semibold leading-snug tracking-tight text-[#1a1918] mb-5">
+              {post.title}
+            </h1>
+            <p className="text-[#4a4744] text-base leading-relaxed mb-6">{post.description}</p>
+            <div className="flex items-center gap-5 text-[0.8rem] text-[#b8b4af]">
+              <time>{new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
+              <span>·</span>
+              <span>{post.readTime}</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Content */}
-      <article className="px-6 py-16 md:py-20">
-        <div className="max-w-3xl mx-auto">
+      {/* Body + sidebar */}
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-16 grid md:grid-cols-12 gap-12">
+        {/* Article */}
+        <article className="md:col-span-7">
           <div
             className="prose"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
-        </div>
-      </article>
+        </article>
 
-      {/* CTA Banner */}
-      <section className="mx-6 mb-16 bg-black text-white rounded-2xl p-10 md:p-14 max-w-3xl md:mx-auto">
-        <p className="text-[#00FFB3] text-xs font-semibold uppercase tracking-widest mb-4">Need Help?</p>
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">
-          Have questions about this topic?
-        </h2>
-        <p className="text-gray-400 mb-8 leading-relaxed">
-          We work directly with international companies navigating Japan and ASEAN legal requirements. Get a direct answer from our team.
-        </p>
-        <Link
-          href="/contact"
-          className="inline-flex items-center justify-center bg-[#00FFB3] text-black font-semibold px-8 py-3.5 rounded-full hover:bg-white transition-colors"
-        >
-          Schedule a Consultation
-        </Link>
-      </section>
-
-      {/* Related */}
-      {relatedPosts.length > 0 && (
-        <section className="px-6 py-16 border-t border-gray-100">
-          <div className="max-w-3xl mx-auto">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-8">Related Insights</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {relatedPosts.map((p) => (
-                <Link
-                  key={p.slug}
-                  href={`/insights/${p.slug}`}
-                  className="group border border-gray-100 rounded-xl p-6 hover:shadow-md transition-shadow"
-                >
-                  <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#00FFB3] bg-black px-2.5 py-0.5 rounded-full mb-3">
-                    {p.category}
-                  </span>
-                  <h4 className="text-sm font-semibold text-black group-hover:text-gray-700 transition-colors leading-snug mb-2">
-                    {p.title}
-                  </h4>
-                  <p className="text-xs text-gray-400">{p.readTime}</p>
-                </Link>
-              ))}
+        {/* Sidebar */}
+        <aside className="md:col-span-4 md:col-start-9">
+          <div className="sticky top-[6rem] space-y-8">
+            {/* CTA */}
+            <div className="border border-[#e0ddd8] bg-[#f8f7f5] p-7">
+              <p className="label-overline mb-4">Need Advice?</p>
+              <p className="text-[0.875rem] text-[#4a4744] leading-relaxed mb-5">
+                We work directly with international companies on Japan and ASEAN legal questions. Contact us for a direct assessment.
+              </p>
+              <Link href="/contact" className="btn-primary w-full text-center">
+                Contact Our Team
+              </Link>
             </div>
+
+            {/* Related */}
+            {filled.length > 0 && (
+              <div>
+                <p className="label-overline mb-5">Related Insights</p>
+                <div className="space-y-4">
+                  {filled.map((p) => (
+                    <Link
+                      key={p.slug}
+                      href={`/insights/${p.slug}`}
+                      className="group block border-b border-[#ece9e4] pb-4 last:border-0 last:pb-0"
+                    >
+                      <span className="tag mb-2 block">{p.category}</span>
+                      <p className="text-[0.875rem] font-medium text-[#1a1918] group-hover:text-[#1e3557] leading-snug transition-colors">
+                        {p.title}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Back */}
+            <Link href="/insights" className="btn-text block">
+              ← All Insights
+            </Link>
           </div>
-        </section>
-      )}
+        </aside>
+      </div>
     </>
   );
 }
