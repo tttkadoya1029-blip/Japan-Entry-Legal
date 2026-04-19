@@ -6,7 +6,7 @@ export default function Home() {
       {/* Header */}
       <header className="border-b border-gray-100 px-6 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <Image src="/logo.svg" alt="Company Logo" width={120} height={20} priority />
+          <Image src="/hp-logo.png" alt="Company Logo" width={160} height={40} priority className="object-contain" />
           <nav className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
             <a href="#services" className="hover:text-black transition-colors">サービス</a>
             <a href="#clients" className="hover:text-black transition-colors">クライアント</a>
@@ -126,7 +126,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-gray-100 px-6 py-8">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
-          <Image src="/logo.svg" alt="Company Logo" width={100} height={16} />
+          <Image src="/hp-logo.png" alt="Company Logo" width={120} height={30} className="object-contain" />
           <p>© {new Date().getFullYear()} Japan Entry Legal. All rights reserved.</p>
         </div>
       </footer>
